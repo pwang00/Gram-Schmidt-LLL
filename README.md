@@ -4,7 +4,7 @@ Sage wouldn't start up for me one day, so I decided to write up my own implement
 
 # Requirements
 
-Python 3.x
+	*Python 3.x
 
 # Usage
 
@@ -35,6 +35,11 @@ Below are examples denoting usages of the gram_schimdt class:
 
     # Prints result
     print(result1)
+
+# TODO
+
+	*Write a better README
+	*Optimize code
 
 
 
