@@ -8,7 +8,7 @@ Sage wouldn't start up for me one day, so I decided to write up my own implement
 
 # Usage
 
-Below are examples denoting usages of the gram_schimdt class:
+The following are examples denoting usages of the gram_schimdt class:
 
     from gram_schmidt import *
     v1 = Vector([1, 0, 0, 1])
@@ -16,19 +16,19 @@ Below are examples denoting usages of the gram_schimdt class:
     v3 = Vector([0, 1, 2, 0])
     v4 = Vector([0, 0, -1, 1])
 
-    # The below two expressions are equivalent
+The below two expressions are equivalent:
 
     result1 = gram_schmidt(v1, v2, v3, v4)
     result2 = gram_schmidt([v1, v2, v3, v4])
     assert result1 == result2
 
-    # Normalize flag causes gram_schmidt() to return an orthonormal set of vectors (such that magnitude v for v in vectors = 1) with floating point components.
+```normalize``` flag causes gram_schmidt() to return an orthonormal set of vectors (such that magnitude v for v in vectors = 1) with floating point components.
 
     result1 = gram_schmidt([v1, v2, v3, v4], normalize=True)
     result2 = gram_schmidt(v1, v2, v3, v4, normalize=True)
     assert result1 == result2
 
-    # Fraction flag causes gram_schmidt() to return a set of vectors with fraction components (if the vector components are not already integers) as to improve readability.
+```fraction``` flag causes gram_schmidt() to return a set of vectors with fraction components (if the vector components are not already integers) as to improve readability.
     result1 = gram_schmidt([v1, v2, v3, v4], fraction=True)
     result2 = gram_schmidt(v1, v2, v3, v4, fraction=True)
     assert result1 == result2
