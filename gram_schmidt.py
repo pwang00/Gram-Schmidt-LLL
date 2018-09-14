@@ -35,9 +35,9 @@ def gram_schmidt(*v, normalize=False, fraction = True, DENOM_LIMIT = 100):
             
     return w_array
 
-v1 = Vector([1, 0, 0, 1])
-v2 = Vector([-1, 0, 2, 1])
-v3 = Vector([0, 1, 2, 0])
-v4 = Vector([0, 0, -1, 1])
-
-print(gram_schmidt([v1, v2, v3, v4], fraction=True))
+if __name__ == "__main__":
+    v1 = Vector([1, 0, 0, 1])
+    v2 = Vector([-1, 0, 2, 1])
+    v3 = Vector([0, 1, 2, 0])
+    v4 = Vector([0, 0, -1, 1])
+    print(gram_schmidt([v1, v2, v3, v4], fraction=True))
