@@ -29,6 +29,7 @@ The below two expressions are equivalent:
     assert result1 == result2
 
 ```fraction``` flag causes gram_schmidt() to return a set of vectors with fraction components (if the vector components are not already integers) as to improve readability.
+
     result1 = gram_schmidt([v1, v2, v3, v4], fraction=True)
     result2 = gram_schmidt(v1, v2, v3, v4, fraction=True)
     assert result1 == result2
