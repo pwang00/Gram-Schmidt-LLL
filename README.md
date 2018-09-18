@@ -12,6 +12,7 @@ The following are examples denoting usages of the gram_schmidt class:
 
     from gram_schmidt import *
     from vector import Vector
+    
     v1 = Vector([1, 0, 0, 1])
     v2 = Vector([-1, 0, 2, 1])
     v3 = Vector([0, 1, 2, 0])
