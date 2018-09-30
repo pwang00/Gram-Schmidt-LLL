@@ -1,6 +1,6 @@
 # Gram-Schmidt
 
-Sage wouldn't start up for me one day, and the one Gram-Schmidt orthogonalization calculator I could find online was being extremely slow due to poor Wi-Fi, so I decided to write up my own implementation of the algorithm using a custom defined Vector class similar to the one used by Sage (albeit skeletonized).  
+Sage wouldn't start up for me one day and the one Gram-Schmidt orthogonalization calculator I could find online was being extremely slow due to poor Wi-Fi, so I decided to write up my own implementation of the algorithm using a custom defined Vector class similar to the one used by Sage (albeit skeletonized).  
 
 # Requirements
 
