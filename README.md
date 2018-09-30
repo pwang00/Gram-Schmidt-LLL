@@ -43,7 +43,7 @@ The below two expressions are equivalent:
 
 * Write a better README
 * Optimize code
-
+* Implement the Lenstra–Lenstra–Lovász lattice basis reduction algorithm for factoring polynomials with rational coefficients, which uses the Gram-Schmidt orthogonalization method. 
 
 
 
