@@ -18,7 +18,7 @@ def LLL(l_basis):
 			proj = mu(ortho[k], ortho[j])
 			if abs(proj) > 1/2:
 				ortho[k] = ortho[k] - int(round(proj)) * ortho[j]
-		if ortho[k].dot_product(ortho[k]) >= (d - mu(ortho[k], ortho[k-1])**2) * (ortho[k-1].dot_product(ortho[k-1])) :
+		if ortho[k].dot_product(ortho[k]) >= (d - mu(ortho[k], ortho[k-1])**2)* (ortho[k-1].dot_product(ortho[k-1])):
 			k += 1
 		else:
 			ortho[k], ortho[k-1] = ortho[k-1], ortho[k]
