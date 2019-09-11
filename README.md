@@ -19,7 +19,6 @@ v3 = Vector([0, 1, 2, 0])
 v4 = Vector([0, 0, -1, 1])
 ```
 The below two expressions are equivalent:
-
 ```python
 result1 = gram_schmidt(v1, v2, v3, v4)
 result2 = gram_schmidt([v1, v2, v3, v4])
@@ -28,10 +27,11 @@ assert result1 == result2
 
 The ```normalize``` flag causes gram_schmidt() to return an orthonormal set of vectors (such that magnitude v for v in vectors = 1) with floating point components (currently needs bug fixing)
 
-    result1 = gram_schmidt([v1, v2, v3, v4], normalize=True)
-    result2 = gram_schmidt(v1, v2, v3, v4, normalize=True)
-    assert result1 == result2
-
+```python
+result1 = gram_schmidt([v1, v2, v3, v4], normalize=True)
+result2 = gram_schmidt(v1, v2, v3, v4, normalize=True)
+assert result1 == result2
+```
 The ```fraction``` flag causes gram_schmidt() to return a set of vectors with fraction components (if the vector components are not already integers) as to improve readability (considering improving representation of fractions atm).
 
 ```python
