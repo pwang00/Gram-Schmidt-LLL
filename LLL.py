@@ -14,22 +14,24 @@ def LLL(l_basis):
 	n = len(ortho)
 
 	while k < n:
-		for j in range(k - 1, 0, -1):
-			proj = mu(ortho[k], ortho[j])
+		for j in range(k - 1, -1, -1):
+			proj = mu(l_basis[k], ortho[j])
 			if abs(proj) > 1/2:
-				ortho[k] = ortho[k] - int(round(proj)) * ortho[j]
-		if ortho[k].dot_product(ortho[k]) >= (d - mu(ortho[k], ortho[k-1])**2)* (ortho[k-1].dot_product(ortho[k-1])):
+				l_basis[k] = l_basis[k] - l_basis[j] * round(proj)
+				ortho = gram_schmidt(l_basis)
+		if ortho[k].dot_product(ortho[k]) >= (d - mu(l_basis[k], ortho[k-1])**2)* (ortho[k-1].dot_product(ortho[k-1])):
 			k += 1
 		else:
-			ortho[k], ortho[k-1] = ortho[k-1], ortho[k]
+			l_basis[k], l_basis[k-1] = l_basis[k-1], l_basis[k]
+			ortho = gram_schmidt(l_basis)
 			k = max(k - 1, 1)
 
-	return ortho
+	return l_basis
 
 if __name__ == "__main__":
-	l_basis = [vector((1, -1, 3)),\
-		vector((1, 0, 5)),\
-		vector((1, 2, 6))]
+	l_basis = [vector((1, 1, 1)),\
+		vector((-1, 0, 2)),\
+		vector((3, 5, 6))]
 	
 	print(LLL(l_basis))
 

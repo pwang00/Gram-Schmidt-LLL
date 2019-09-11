@@ -1,7 +1,7 @@
 from vector import vector
 from fractions import Fraction
 
-def gram_schmidt(*v, normalize=False, fraction = True, DENOM_LIMIT = 100):
+def gram_schmidt(*v, normalize=False, fraction=False, DENOM_LIMIT=100):
 
     #Check to see if argument is of type list 
     if len(v) == 1 and type(v[0]) in [list, tuple]:
@@ -25,7 +25,7 @@ def gram_schmidt(*v, normalize=False, fraction = True, DENOM_LIMIT = 100):
             w_n -= (vector(v_n).dot_product(vector(w_array[j]))
                     /(vector(w_array[j])\
                       .dot_product(vector(w_array[j]))))*vector(w_array[j])
-        w_array += [w_n]
+        w_array += [vector(w_n)]
         
         if fraction == True:
             w_array = [vector(w).fraction_form(DENOM_LIMIT) for w in w_array]
@@ -33,11 +33,10 @@ def gram_schmidt(*v, normalize=False, fraction = True, DENOM_LIMIT = 100):
         if normalize == True:
             w_array = [vector(w).normalize() for w in w_array]
             
-    return w_array
+    return [vector(i) for i in w_array]
 
 if __name__ == "__main__":
-    v1 = vector([1, 0, 0, 1])
-    v2 = vector([-1, 0, 2, 1])
-    v3 = vector([0, 1, 2, 0])
-    v4 = vector([0, 0, -1, 1])
-    print(gram_schmidt([v1, v2, v3, v4], fraction=True))
+    v1 = vector([1, 0, 0])
+    v2 = vector([-1, 0, 2])
+    v3 = vector([0, 1, 2])
+    print(gram_schmidt([v1, v2, v3]))
