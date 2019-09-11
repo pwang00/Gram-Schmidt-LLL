@@ -5,9 +5,10 @@ from copy import deepcopy
 d = 0.75
 
 def mu(b_i, b_j):
-	return b_i.dot_product(b_j) / b_j.dot_product(b_j)
+	return b_i.dot_product(b_j) / b_j.dot_product(b_j) if b_j.dot_product(b_j) != 0 else 0
 
 def LLL(l_basis):
+
 	ortho = [vector(i) for i in gram_schmidt(l_basis)]
 
 	k = 1
@@ -19,8 +20,10 @@ def LLL(l_basis):
 			if abs(proj) > 1/2:
 				l_basis[k] = l_basis[k] - l_basis[j] * round(proj)
 				ortho = gram_schmidt(l_basis)
+		
 		if ortho[k].dot_product(ortho[k]) >= (d - mu(l_basis[k], ortho[k-1])**2)* (ortho[k-1].dot_product(ortho[k-1])):
 			k += 1
+
 		else:
 			l_basis[k], l_basis[k-1] = l_basis[k-1], l_basis[k]
 			ortho = gram_schmidt(l_basis)

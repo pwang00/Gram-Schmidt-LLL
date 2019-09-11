@@ -15,7 +15,7 @@ class vector(object):
         
     def get_values(self):
         return self.int_array
-
+        
     def __mul__(self, c):
         try:
             assert type(c) in [float, int]
