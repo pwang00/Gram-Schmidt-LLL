@@ -45,7 +45,7 @@ print(result1)
 
 Recently, I also added an implementation for the Lenstra–Lenstra–Lovász (LLL) lattice basis reduction algorithm.  Its usage is very similar to that of Gram-Schmidt, as shown below:
 
-```
+```python
 l_basis = [vector((3, 4, 5)), vector((6, 7, 8)), vector((9, 10, 11))]
 
 result = LLL(l_basis, d=0.75)
@@ -53,6 +53,8 @@ print(result)
 
 # [(0, 0, 0), (0, -1, -2), (3, 1, -1)]
 ```
+
+Note that the input vectors are the column space of a lattice, not row space.  I should consider adding a matrix class with transposition support to better complement LLL.
 
 # TODO
 
