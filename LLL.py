@@ -29,9 +29,9 @@ def LLL(l_basis):
 	return l_basis
 
 if __name__ == "__main__":
-	l_basis = [vector((1, 1, 1)),\
-		vector((-1, 0, 2)),\
-		vector((3, 5, 6))]
+	l_basis = [vector((3, 4, 5)),\
+		vector((6, 7, 8)),\
+		vector((9, 10, 11))]
 	
 	print(LLL(l_basis))
 

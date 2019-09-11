@@ -1,5 +1,6 @@
 from vector import vector
 from fractions import Fraction
+from copy import deepcopy
 
 def gram_schmidt(*v, normalize=False, fraction=False, DENOM_LIMIT=100):
 
@@ -13,19 +14,19 @@ def gram_schmidt(*v, normalize=False, fraction=False, DENOM_LIMIT=100):
     #By Gram-Schmidt, w_1 = v_1
     w_1 = v[0]
     w_n = w_1
-    w_array = [vector(w_n)]
+    w_array = [deepcopy(vector(w_n))]
     
     #Every vector w_1 ... w_n
-    
     for n in range(1, len(v)):
         v_n = vector(v[n])
         w_n = vector(v_n)
 
         for j in range(n):
-            w_n -= (vector(v_n).dot_product(vector(w_array[j]))
-                    /(vector(w_array[j])\
-                      .dot_product(vector(w_array[j]))))*vector(w_array[j])
-        w_array += [vector(w_n)]
+            w_j = deepcopy(w_array[j])
+            w_n -= v_n.dot_product(w_j) / w_j.dot_product(w_j)*w_j
+       
+        if any(w_n): 
+            w_array += [w_n]
         
         if fraction == True:
             w_array = [vector(w).fraction_form(DENOM_LIMIT) for w in w_array]

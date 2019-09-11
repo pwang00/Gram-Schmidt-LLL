@@ -29,7 +29,10 @@ class vector(object):
         except:
             raise ValueError("c must be a scalar type")
         return vector([c * i for i in self.int_array])
-        
+    
+    def __iter__(self):
+        return iter(self.int_array)
+    
     def __iadd__(self, v):
         self.int_array = [v.get_values()[i]+self.int_array[i] for i in range(len(self.int_array))]
         return vector(self.int_array)
