@@ -2,7 +2,7 @@
 
 Sage wouldn't start up for me one day and the one Gram-Schmidt orthogonalization calculator I could find online was being extremely slow due to poor Wi-Fi, so I decided to write up my own implementation of the algorithm using a custom defined Vector class similar to the one used by Sage (albeit skeletonized).  I also recently added an implementation for the Lenstra–Lenstra–Lovász (LLL) lattice basis reduction algorithm, which takes a lattice (discrete additive subgroup of R^n) basis and generates from it a basis with shorter, nearly orthogonal vectors.  LLL is used in many cryptanalytical attacks against cryptosystems such as RSA, and I intend to implement some more of these attacks (in [RSA Attacks](https://github.com/pwang00/RSA-Attacks.git)) from scratch using this repository as proof-of-concept.  
 
-Disclaimers: most of the code here is unoptimized and pretty clunky as of yet, so I'll spend some time sometime and clean it up.
+Disclaimers: most of the code here is unoptimized and pretty clunky as of yet, so I'll spend some time sometime and clean it up.  Also, credits to @jonahtash for adding step-by-step LaTeX support.
 
 # Requirements
 
