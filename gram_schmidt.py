@@ -7,6 +7,7 @@ def v_to_tex(v):
     for i in v:
         u.append(str(i))
     return "\\langle" + ', '.join(u) + "\\rangle"
+
 def vf_to_tex(v):
     u = []
     for f in v:
